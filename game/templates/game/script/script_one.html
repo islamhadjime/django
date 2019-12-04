@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <style>
+   .id_container{
+     margin-top:50px;
+   }
+
+     .container pre{
+       color:#3f51b5 ;
+     }
+  </style>
+
+  <div class="id_container">
+   <div class= "container">
+      <h1> {{script_one.title}} </h1>
+      <p> {{script_one.text}}<p>
+      <div class="kod">
+        <pre><code> {{script_one.kod}} </code></pre>
+      </div>
+       <p > {{script_one.created_date}}</p>
+
+    </div>
+    </div>
+
+{% endblock%}

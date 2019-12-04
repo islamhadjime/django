@@ -1,0 +1,82 @@
+{% extends 'base.html'%}
+{% load  static %}
+
+
+
+
+{% block content %}
+<style>
+
+
+    .card{
+      margin-top:30px;
+      margin-bottom:0px;
+    }
+
+    img{
+      height:700px;
+    }
+
+  .card-title{
+     color:black;
+  }
+  .card-text{
+     color:black;
+  }
+
+  .id1{
+    margin-left:50px;
+  }
+
+  .card-body{
+    background-color:#e0e0e0;
+  }
+
+
+  @media screen and (max-width:680px){
+
+
+
+
+    img{
+      height:1000px;
+
+    }
+
+    .id1{
+      margin-left:20px;
+      margin-top:0px;
+      margin-bottom:0px;
+    }
+
+
+  }
+  </style>
+
+
+
+
+   <div class="card bg-dark text-white">
+    <img src="{% static "img/Img.jpg" %}" class="card-img" alt="...">
+    <div class="card-img-overlay">
+<div class="row">
+  {% for scripts in script %}
+
+  <div class ="id1">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{scripts.title}} </h5>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Подзаголовок карты</h6> -->
+      <p class="card-text">{{scripts.text|truncatewords:15}}</p>
+
+      <a href="{% url 'script' pk=scripts.pk %}"> <button type="button" class="btn btn-secondary btn-sm">Ссылка</button></a>
+    </div>
+  </div>
+  </div>
+
+{% endfor %}
+</div>
+
+</div>
+</div>
+{% endblock%}
